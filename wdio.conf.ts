@@ -157,7 +157,10 @@ export const config: Options.Testrunner = {
     reporters: [
         'dot',
         ['junit', {
-            outputDir: './'
+            outputDir: './',
+            outputFileFormat: function (options) { // optional
+                return 'results-junit.xml'
+            }
         }],
         ['allure', {
             outputDir: 'allure-results'

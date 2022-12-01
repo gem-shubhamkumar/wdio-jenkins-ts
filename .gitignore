@@ -2,3 +2,4 @@ node_modules
 allure-report
 allure-results
 wdio-**junit-*
+*junit*.xml

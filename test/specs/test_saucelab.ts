@@ -49,31 +49,4 @@ describe('Sauce Lab Testing', () => {
         assert.strictEqual(product, productName)
         await $('#checkout').click()
     });
-
-    it('Checkout - fill information', async () => {
-        await browser.pause(1000)
-        const title = await $('.title').getText()
-        assert.strictEqual(title, "CHECKOUT: YOUR INFORMATION")
-        await $('#first-name').setValue('First')
-        await $('#last-name').setValue('Last')
-        await $('#postal-code').setValue('234567')
-        await $('#continue').click()
-    });
-
-    it('Checkout - overview', async () => {
-        await browser.pause(1000)
-        const title = await $('.title').getText()
-        assert.strictEqual(title, "CHECKOUT: OVERVIEW")
-        const product = await $('.inventory_item_name').getText()
-        assert.strictEqual(product, productName)
-        await $('#finish').click()
-    });
-
-    it('Checkout - complete', async () => {
-        await browser.pause(1000)
-        const title = await $('.title').getText()
-        assert.strictEqual(title, "CHECKOUT: COMPLETE!")
-        const message = await $('h2.complete-header').getText()
-        assert.strictEqual(message, "THANK YOU FOR YOUR ORDER")
-    });
 });

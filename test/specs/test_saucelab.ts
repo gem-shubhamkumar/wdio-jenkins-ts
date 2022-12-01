@@ -44,7 +44,7 @@ describe('Sauce Lab Testing', () => {
     it('Cart - click checkout', async () => {
         await browser.pause(1000)
         const title = await $('.title').getText()
-        assert.strictEqual(title, "YOUR CART")
+        assert.strictEqual(title, "YOUR CAR")
         const product = await $('.inventory_item_name').getText()
         assert.strictEqual(product, productName)
         await $('#checkout').click()
